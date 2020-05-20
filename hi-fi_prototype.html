@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+        <style>
+            :root {
+            --green: #36c157;
+            --blue:  #0071BC;
+            --orange: #ea461f;
+            --purple: #6e5494;
+        }
+        *{
+            font-family:'Viga', sans-serif;;
+        }
+
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+
+            #mockup{
+                height: 700px;
+                width: 100vw;
+                background-image: url('https://images.idgesg.net/images/article/2019/12/macos-catalina-desktop-100820410-large.jpg');
+                background-position-x: right;
+                background-position-y: top;
+                background-size: cover;
+            }
+       
+            #G{
+                position: absolute;
+                top:2px;
+                right:240px;
+                cursor: pointer;
+            }
+            #G:hover{
+                transform: scale(1.2);
+            }
+            #App{
+                position: absolute;
+                top:32px;
+                right:80px;
+                    
+                height:500px;
+                width:500px;
+            }
+            .screen{
+                height:400px;
+                width: 400px;
+                border-radius: 50%;
+                box-shadow: 2px 2px 6px 0px black;
+                background-color: whitesmoke;
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                overflow: hidden;
+                margin-left: 20%;
+                position: absolute;
+            }
+       
+                #screen2{
+                    background-color: #0071BC;
+                    z-index: 2;
+                }
+                #screen2 .headerText {
+                    background-color: whitesmoke;
+                }
+                #screen2 .headerText h2{
+                    color:var(--blue);
+                    padding-top: 5px;
+                }
+         
+
+
+            #home-logo, .headerText{
+                background-color: #0071BC;
+                grid-area: 1 / 1 / span 4 / span 12;
+                border-radius: 48px;
+            }
+            #home-logo img{
+                width: 60%;
+                margin: auto 20%;
+                padding: 48px 0px;
+            }
+
+            .headerText{
+                grid-area: 1 / 1 / span 2 / span 12;
+                border-radius: 50%;
+            }
+            .headerText h2{
+                color: whitesmoke;
+                text-align: center;
+            }
+
+            .x{
+                box-shadow: 1px 0px 1px 0px black;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                background-color: #0071BC;
+                position: absolute;
+                margin-left: 83%;
+                margin-top: 4%;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .x span{
+                display: block;
+                color: whitesmoke
+            }
+            #cont2 .x{
+                background-color: whitesmoke;
+                z-index: 3;
+            }
+            #cont2 .x span{
+                color: var(--blue);
+            }
+            #screen1 .button {
+                margin: 10px;
+                padding: 20px;
+                text-align: center;
+                position: relative;
+                overflow:hidden;
+                transition: .3s;
+                background-color: var(--green);
+                grid-area: 6 / 2 / span 3/ span 5;
+                color: whitesmoke;
+                border:4px solid transparent;
+                border-radius: 24px;
+                cursor: pointer;
+                font-size: 106%;
+                line-height: 112%;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+            }
+            #screen1 .button:nth-child(2){
+                grid-area: 6 / 7 / span 3/ span 5;
+            }
+            #screen1 .button:hover{
+                background: whitesmoke;
+                color: var(--green);
+                border:4px solid var(--green);
+            }
+
+            #repoBubbleCont{
+                display:flex;
+                flex-wrap: wrap;
+                grid-area: 3 / 1 / span 10 / span 12;
+            }
+
+            .repoBubble{
+                border-radius: 50%;
+                margin: auto;
+                font-size: 10px;
+                background-color: var(--orange);
+                text-align: center;
+                color: whitesmoke;
+                cursor: pointer;
+                line-height: 100%;
+                display: flex;
+            }
+            .repoBubble p{
+                margin: auto;
+                text-align: center;
+                z-index: 4;
+            }
+            .repoBubble:hover{
+                background-color: var(--purple);
+            }
+
+        svg{
+            transform: rotate(270deg) translateX(-60px) translateY(24px);
+        }
+
+        path, circle { 
+            stroke: var(--orange); 
+        }
+        circle {
+            fill: var(--orange);
+        }
+        #commit, #changes{
+            background-color: var(--green);
+            grid-area: 1 / 1 / span 4 / span 12;
+            border-radius: 88px;
+        }
+        #newCommit, #push, #createRepo{
+            width:200px;
+            height: 40px;
+            background-color:var(--green);
+            color: whitesmoke;
+            border: 3px solid whitesmoke;
+            margin: 80px 100px;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        #newCommit:hover{
+            background-color:whitesmoke;
+            color: var(--green);
+            border:3px solid transparent;
+        }
+        #branch{
+            top: 40%;
+            left: 60%;
+            position: absolute;
+            border-bottom: 4px solid var(--orange);
+        }
+        .com-s{
+            grid-area: 1 / 1 / span 3 / span 12;
+        }
+        #changes{
+            grid-area: 1 / 1 / span 6 / span 12;
+            background-color: var(--purple);
+        }
+        #changes h3{
+            margin-top: 26%;
+            margin-left: 10%;
+            color:whitesmoke;
+        }
+        .commitMsg{
+            color: var(--blue);
+            border: none;
+            border-bottom: 3px solid var(--blue);
+            width: 300px;
+            margin-left:15%;
+            margin-top:5%;
+            font-weight: bold;
+            outline: none;
+            background-color: whitesmoke;
+        }
+        #pushTo{
+            grid-row-start: 9;
+            width:200px;
+            margin-left: 33%;
+        }
+        #push, #createRepo{
+            grid-row-start: 11;
+            margin: 0px;
+            width:100px;
+            height: 30px;
+            transform: translateX(140px);
+            border:2px solid transparent;
+        }
+        #push:hover, #createRepo:hover{
+            color: var(--green);
+            background-color: whitesmoke;
+            border:2px solid var(--green);;
+        }
+
+        .create{
+            padding: 12px;
+            width:145px;
+            grid-row-start: 4;
+            background-color: var(--green);
+            border-radius: 12px;
+            color: whitesmoke;
+            margin-left: 24px;
+        }
+        #nameRepo{    position: absolute;
+                margin-top: 228px;
+                margin-left: 48px;
+            }
+        #repoDesc{
+            position: absolute;
+                margin-top: 280px;
+                margin-left: 48px;
+        }
+
+        #createRepo{
+
+        }
+        </style>
+    </head>
+    <script>
+         let appOpen = true;
+    </script>
+<body>
+    <div id="mockup">
+        <img id="G" height="22" width="12" src="https://svgur.com/i/LJU.svg">
+        <div id="App">
+
+        <div id="cont1" class="screenCont">
+            <div class="x" onclick="document.querySelector('#App').style.display = 'none'; appOpen = false;">
+                <span>&#10006;</span>
+            </div>
+            <div class="screen" id="screen1">
+                <div id="home-logo">
+                    <img id="logo" src="https://svgur.com/i/LHm.svg">
+                </div>
+                <div class="button" id="openRepo" onclick="GoToScreen(2);">Open repository</div>
+                <div class="button" id="createNew" onclick="GoToScreen(5);">Create new repository</div>
+            </div>
+        </div>
+
+    <div id="cont2" class="screenCont">
+        <div class="x" onclick="GoToScreen(1);">
+            <span>&#10006;</span>
+        </div>
+            <div class="screen" id="screen2">
+                <div class="headerText">
+                   <h2>Your repositories</h2>
+                </div>
+                <div id="repoBubbleCont">
+                    <div class="repoBubble"  onclick="GoToScreen(3);"></div>
+                    <div class="repoBubble"  onclick="GoToScreen(3);"></div>
+                    <div class="repoBubble"  onclick="GoToScreen(3);"></div>
+                    <div class="repoBubble" onclick="GoToScreen(3);"></div>
+                  
+                </div>
+            </div>
+    </div>
+
+    <div id="cont3" class="screenCont">
+        <div class="x" onclick="GoToScreen(2);">
+            <span>&#10006;</span>
+        </div>
+            <div class="screen" id="screen3">
+                <div id="commit">
+                    <button class="button" id="newCommit" onclick="GoToScreen(4);">New Commit</button>
+                 </div>
+                <div class="headerText">
+                   <h2><i>Selected repo</i></h2>
+                </div>
+                <h3 id="branch">Master branch</h3>
+
+                <svg>
+                    <path fill="transparent" stroke-width="4" d="M20 100 L100 100 L180 100 L260 100"></path>
+                    <g stroke-width="2">
+                      <circle class="linePlotNav" id="dot1" cx="20" cy="100" r="6" style="fill: var(--orange);"></circle>
+                      <circle class="linePlotNav" id="dot2" cx="100" cy="100" r="6" style="fill: var(--orange);"></circle>
+                      <circle class="linePlotNav" id="dot3" cx="180" cy="100" r="6" style="fill: var(--orange);"></circle>
+                      <circle class="linePlotNav" id="dot4" cx="260" cy="100" r="10" style="fill: rgb(255, 255, 255);"></circle>
+                    </g>
+                  </svg>
+            </div>
+    </div>
+
+     
+    <div id="cont4" class="screenCont">
+        <div class="x" onclick="GoToScreen(3);">
+            <span>&#10006;</span>
+        </div>
+            <div class="screen" id="screen4">
+                <div id="changes">
+                    <h3>Files with<br>changes:</h3>
+                 </div>
+                <div class="headerText com-s">
+                   <h2>New commit<br><i>selected repo</i></h2>
+                </div>
+                <input type = text class="commitMsg" placeholder="commit message">
+                <div id="pushTo">
+                    <h3 style="display: inline; margin-right: 8px;"> Push to  </h3> 
+                    <select style="display: inline; color: var(--orange); outline:none;">
+                        <option value="Master">Master</option>
+                    </select>
+                </div>
+                <button class="button" id="push" onclick="GoToScreen(3);">Push</button>
+            </div>
+    </div>
+
+
+    <div id="cont5" class="screenCont">
+        <div class="x" onclick="GoToScreen(1);">
+            <span>&#10006;</span>
+        </div>
+            <div class="screen" id="screen5">
+                <div class="headerText" style="grid-row-end: 4; margin-bottom:3px;">
+                    <h2>New Repository</h2>
+                 </div>
+                 <div class="create existing">
+                        <h3>Create from existing folder</h3>
+                        <input type="file">
+                 </div>
+                 <div class="create empty">
+                    <h3>Create empty repository</h3>
+                    <input type="file">
+                </div>
+                <input type = text class="commitMsg" id="nameRepo" placeholder="Name your repository">
+                <input type = text class="commitMsg" id="repoDesc" placeholder="Description">
+
+                <button class="button" id="createRepo" onclick="GoToScreen(3);">Create</button>
+            </div>
+    </div>
+
+    </div>
+    </div>
+    <script>
+       
+        document.querySelector("#G").addEventListener("click", () =>{
+            if(appOpen){
+                document.querySelector("#App").style.display = "none";
+                appOpen = false;
+            }
+            else{
+                document.querySelector("#App").style.display = "block";
+                appOpen = true;
+            }
+        });
+
+        const screens = document.querySelectorAll(".screenCont");
+
+        const Xs = document.querySelectorAll(".x");
+ 
+
+        function GoToScreen(scrn){
+            screens.forEach(s =>{
+                s.style.display = "none";
+            })
+            screens[scrn - 1].style.display = "block";
+        }
+
+        GoToScreen(1);
+
+
+        let projectNames = ["<p>cool project</p>", "<p>my awesome repo</p>", "<p>example.com repo</p>", "<p>My Project</p>"];
+
+        document.querySelectorAll(".repoBubble").forEach(bubble =>{
+            let randTitle =  Math.floor(Math.random() * 4);
+            let randSize =  Math.floor(Math.random() * 200);
+            let randTop=  Math.floor(Math.random() * 300);
+            let randLeft =  Math.floor(Math.random() * 300);
+            switch(randTitle){
+                case 0: bubble.innerHTML = projectNames[0]; break;
+                case 1: bubble.innerHTML = projectNames[1]; break;
+                case 2: bubble.innerHTML = projectNames[2]; break;
+                case 3: bubble.innerHTML = projectNames[3]; break;
+            }
+            bubble.style.height = `${randSize}px`;
+            bubble.style.width = `${randSize}px`;
+            bubble.style.top = `${randTop}px`;
+            bubble.style.left = `${randLeft}px`;
+        });
+    </script>
+</body>
+</html>
